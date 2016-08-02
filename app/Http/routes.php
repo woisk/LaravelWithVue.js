@@ -26,3 +26,6 @@ Route::get('/step4',function(){
 Route::get('/step5',function(){
     return view('step5');
 });
+Route::get('/step6',function(){
+    return view('step6');
+});

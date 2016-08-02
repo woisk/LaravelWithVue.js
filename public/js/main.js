@@ -86,7 +86,25 @@ var vue5 = new Vue({
         }
     }
 });
-
+var vue6 = new Vue({
+    el:'#app6',
+    data:{
+        isA:true,
+        isB:false,
+        classVal:{
+            'class-a':false,
+            'class-b':true
+        },
+        classValue:[
+            'class-a',
+            'class-b',
+            {'class-a':true}
+        ],
+        styleVal:{
+            transform:'translate(50px,0)'
+        }
+    }
+});
 
 
 
