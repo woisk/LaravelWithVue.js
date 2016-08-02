@@ -23,3 +23,6 @@ Route::get('/step3',function(){
 Route::get('/step4',function(){
 	return view('step4');
 });
+Route::get('/step5',function(){
+    return view('step5');
+});

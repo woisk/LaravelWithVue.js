@@ -49,3 +49,34 @@ var vue4 = new Vue({
         }
     }
 });
+var vue5 = new Vue({
+   el:'#app5',
+    data:{
+       number:56,
+        ok:true,
+        message:'Hello'
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
