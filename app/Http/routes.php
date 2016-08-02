@@ -20,3 +20,6 @@ Route::get('/step2',function (){
 Route::get('/step3',function(){
     return view('step3');
 });
+Route::get('/step4',function(){
+	return view('step4');
+});

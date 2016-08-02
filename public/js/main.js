@@ -27,4 +27,25 @@ var vue3 = new Vue({
             this.msg = this.msg.split('').reverse().join('');
         }
     }
-})
+});
+var vue4 = new Vue({
+    el:'#app4',
+    data:{
+        newTodo:'',
+        todos:[
+        {text:'Add some todos'}
+        ]
+    },
+    methods:{
+        addTodo:function (){
+            var text = this.newTodo.trim();
+            if(text){
+                this.todos.push({text:text})
+                this.newTodo = '';
+            }
+        },
+        removeTodo:function(index){
+            this.todos.splice(index,1);
+        }
+    }
+});
