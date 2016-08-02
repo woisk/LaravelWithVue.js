@@ -49,15 +49,43 @@ var vue4 = new Vue({
         }
     }
 });
+
 var vue5 = new Vue({
    el:'#app5',
     data:{
        number:56,
         ok:true,
-        message:'Hello'
+        message:'Hello',
+        url:'http://baidu.com',
+        a:10
+    },
+    computed:{
+        /*只调用get方法的一种写法
+        b:function () {
+            return this.a+1
+        }*/
+        aa:{
+            get:function () {
+                return this.a;
+            },
+            set:function (val) {
+                if(val){
+                    this.a = val;
+                }else{
+                    return this.a = 10;
+                }
+            }
+        },
+        b:function () {
+            return this.a+1;
+        }
+    },
+    methods:{
+        doSomeThing:function () {
+            alert('yes');
+        }
     }
 });
-
 
 
 
