@@ -17,3 +17,6 @@ Route::get('/', function () {
 Route::get('/step2',function (){
    return view('step2');
 });
+Route::get('/step3',function(){
+    return view('step3');
+});

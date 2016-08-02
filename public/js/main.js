@@ -16,4 +16,15 @@ var vue2 = new Vue({
             {text:'do something awesome'},
         ]
     }
+});
+var vue3 = new Vue({
+    el:'#app3',
+    data:{
+        msg:"Hello"
+    },
+    methods:{
+        reverseMsg :function () {
+            this.msg = this.msg.split('').reverse().join('');
+        }
+    }
 })
