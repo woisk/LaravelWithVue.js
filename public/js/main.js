@@ -6,4 +6,14 @@ var vue = new Vue({
     data:{
         message:'Hello world!'
     }
+});
+var vue2 = new Vue({
+    el:'#app2',
+    data:{
+        todos:[
+            {text:'learn php'},
+            {text:'learn laravel'},
+            {text:'do something awesome'},
+        ]
+    }
 })

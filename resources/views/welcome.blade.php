@@ -30,15 +30,15 @@
                 display: inline-block;
             }
 
-            p {
-                font-size: 96px;
-            }
+            p,li{  font-size: 96px;  }
+
         </style>
     </head>
     <body>
     <div id="app" class="container">
         <div class="content">
             <p>@{{message}}</p>
+            @yield('content')
         </div>
     </div>
 
