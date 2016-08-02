@@ -102,7 +102,8 @@ var vue6 = new Vue({
         ],
         styleVal:{
             transform:'translate(50px,0)'
-        }
+        },
+        ok:true
     }
 });
 

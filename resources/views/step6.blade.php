@@ -24,6 +24,10 @@
     </div>
     <div class="static" :class="classValue">
     </div>
+    <div v-if="ok">Yes</div>
+    <div v-else>No</div>
+    <div v-show="ok">Yes</div>
+    <div v-show="!ok">No</div>
 </div>
 <script src="js/vue.min.js"></script>
 <script src="js/main.js"></script>
