@@ -152,6 +152,35 @@ var vue7 = new Vue({
         b:'B'
     }
 });
+var vue8 = new Vue({
+    el:'#app8',
+    data:{
+        show:true,
+        expand:'fade',
+        show1:true,
+        ok:true,
+        list:[
+            {msg:'John'},
+            {msg:'Mike'},
+            {msg:'Jobs'},
+            {msg:'Jobs1'},
+            {msg:'Jobs2'},
+            {msg:'Jobs3'},
+            {msg:'Jobs4'},
+            {msg:'Jobs5'}
+        ]
+    },
+    methods:{
+        toggle:function () {
+            if(this.show)
+                this.show = false;
+            else
+            this.show=true;
+        }
+    }
+});
+
+
 
 
 
