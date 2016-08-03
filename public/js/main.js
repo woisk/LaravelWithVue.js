@@ -103,11 +103,55 @@ var vue6 = new Vue({
         styleVal:{
             transform:'translate(50px,0)'
         },
-        ok:true
+        ok:true,
+        parent:'parent',
+        items:[
+            'one',
+            'two',
+            'tree'
+        ]
+    },
+    computed:{
+        joinTest:function () {
+            return this.items.join();
+        },
+        popTest:function () {
+            return this.items.pop();
+        },
+        unshiftTest:function () {
+            return this.items.unshift('123');
+        },
+        shiftTest:function () {
+            return this.items.shift();
+        }
+
+    },
+    methods:{
+        setItem:function () {
+            this.items.$set(1,'four');
+        }
     }
 });
 
-
+var vue7 = new Vue({
+   el:'#app7',
+    methods:{
+       alertMsg:function () {
+           alert('hello LWV!');
+       }
+    },
+    data:{
+        checkedNames:[],
+        selected:'B',
+        options:[
+            {text:'one',value:'A'},
+            {text:'two',value:'B'},
+            {text:'three',value:'C'}
+        ],
+        a:'A',
+        b:'B'
+    }
+});
 
 
 
