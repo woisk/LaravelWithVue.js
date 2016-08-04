@@ -1,6 +1,91 @@
 /**
  * Created by Administrator on 2016/8/2.
  */
+Vue.transition('myAnimateTest',{
+    enterClass:'bounceInLeft',
+    leaveClass:'bounceOutRight'
+});
+/*var MyComponent = Vue.extend({
+    template:'<div>A custom component!</div>'
+});
+Vue.component('my-component',MyComponent);*/
+var Child = Vue.extend({
+    props:['msg'],
+   template:'<div>{{msg}}</div>'
+});
+var Parent = Vue.extend({
+    template: '<div><my-component msg = "hello"></my-component></div>',
+    components : {
+        // <my-component> 只能用在父组件模板内
+        'my-component': Child
+    }
+});
+
+var Child1 = Vue.extend({
+    props:['myName'],
+    template:'<div>{{myName}}</div>'
+});
+var Parent1 = Vue.extend({
+    template:' <input type="text" v-model="myNames">' +
+    '<child1 :my-name="myNames"></child1>' +
+    '<button @click=""></button>',
+    components:{
+        'child1':Child1
+    }
+});
+
+// 注册子组件
+// 将当前消息派发出去
+Vue.component('child2', {
+    template: '#child-template',
+    data: function () {
+        return { msg: 'hello' }
+    },
+    methods: {
+        notify: function () {
+            if (this.msg.trim()) {
+                this.$dispatch('child-msg', this.msg)
+                this.msg = ''
+            }
+        }
+    }
+});
+// 注册子组件
+// 将当前消息派发出去
+Vue.component('child', {
+    template: '#child-template',
+    data: function () {
+        return { msg: 'hello' }
+    },
+    methods: {
+        notify: function () {
+            if (this.msg.trim()) {
+                this.$dispatch('child-msg', this.msg)
+                this.msg = ''
+            }
+        }
+    }
+})
+
+// 初始化父组件
+// 将收到消息时将事件推入一个数组
+var parent = new Vue({
+    el: '#events-example',
+    data: {
+        messages: []
+    },
+    // 在创建实例时 `events` 选项简单地调用 `$on`
+    events: {
+        'child-msg': function (msg) {
+            // 事件回调内的 `this` 自动绑定到注册它的实例上
+            this.messages.push(msg)
+        }
+    }
+})
+Vue.component('parent',Parent);
+Vue.component('parent1',Parent1);
+
+
 var vue = new Vue({
     el:'#app',
     data:{
@@ -49,7 +134,6 @@ var vue4 = new Vue({
         }
     }
 });
-
 var vue5 = new Vue({
    el:'#app5',
     data:{
@@ -132,7 +216,6 @@ var vue6 = new Vue({
         }
     }
 });
-
 var vue7 = new Vue({
    el:'#app7',
     methods:{
@@ -178,6 +261,13 @@ var vue8 = new Vue({
             this.show=true;
         }
     }
+});
+var vue9 = new Vue({
+    el:'#app9',
+    data:{
+        //msg:'hello'
+    }
+
 });
 
 

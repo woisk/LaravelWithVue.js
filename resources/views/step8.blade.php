@@ -52,6 +52,8 @@
     <button @click="show = !show">toggle</button><br>
     <div v-show="show1" transition="fade">Look at this</div><br>
     <button @click="show1=!show1">toggle</button><br>
+    <div style="height: 100px; font-size: 80px;" v-show="ok"  class="animated" transition="myAnimateTest">Watch me bounce</div>
+    <button @click="ok = !ok">toggle</button>
     <input type="text" v-model="query">
     <ul>
         <li v-for="item in list|filterBy query" transition="staggered" stagger="100">@{{ item.msg }}</li>
